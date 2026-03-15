@@ -36,8 +36,15 @@ export default function Home() {
           startup ideas based on your skills and interests.
         </p>
 
-        <form
-          <form action="https://formspree.io/f/YOURFORMID" method="POST">
+
+<form action="https://formspree.io/f/mdawlyab" method="POST">
+
+<input
+type="text"
+name="name"
+placeholder="Your name"
+required
+/>
 
 <input
 type="email"
@@ -54,10 +61,11 @@ required
 ></textarea>
 
 <button type="submit">
-Send
+Send Message
 </button>
 
 </form>
+
         >
           <input
             type="email"
