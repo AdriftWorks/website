@@ -37,8 +37,27 @@ export default function Home() {
         </p>
 
         <form
-          action="https://formspree.io/f/mdawlyab"
-          method="POST"
+          <form action="https://formspree.io/f/YOURFORMID" method="POST">
+
+<input
+type="email"
+name="email"
+placeholder="Your email"
+required
+/>
+
+<textarea
+name="message"
+placeholder="Tell me what you're building or what you need..."
+rows="5"
+required
+></textarea>
+
+<button type="submit">
+Send
+</button>
+
+</form>
         >
           <input
             type="email"
