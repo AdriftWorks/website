@@ -37,7 +37,7 @@ export default function Home() {
         </p>
 
         <form
-          action="https://formspree.io/f/yourformid"
+          action="https://formspree.io/f/mdawlyab"
           method="POST"
         >
           <input
