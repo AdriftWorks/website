@@ -1,28 +1,80 @@
 export default function Home() {
   return (
-    <main style={{padding:"60px", fontFamily:"sans-serif"}}>
-      <h1>Adrift Works</h1>
+    <main style={{
+      minHeight: "100vh",
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center",
+      justifyContent: "center",
+      fontFamily: "sans-serif",
+      padding: "40px",
+      textAlign: "center"
+    }}>
+      
+      <h1 style={{fontSize: "48px", marginBottom: "10px"}}>
+        Adrift Works
+      </h1>
 
-      <p>
-        We build AI tools, automation systems, and digital products that
-        help people work faster and earn more.
+      <p style={{fontSize: "20px", maxWidth: "600px", marginBottom: "40px"}}>
+        We build AI tools and automation systems that help people
+        start businesses, save time, and make money online.
       </p>
 
-      <h2>Coming Products</h2>
+      <div style={{
+        border: "1px solid #ddd",
+        padding: "30px",
+        borderRadius: "10px",
+        maxWidth: "500px"
+      }}>
+        
+        <h2 style={{marginBottom: "10px"}}>
+          First Tool Launching Soon
+        </h2>
 
-      <ul>
-        <li>AI automation tools</li>
-        <li>Agentic workflow builders</li>
-        <li>Digital productivity systems</li>
-      </ul>
+        <p style={{marginBottom: "20px"}}>
+          An AI business idea generator that creates profitable
+          startup ideas based on your skills and interests.
+        </p>
 
-      <p>
-        Join the waitlist to get early access.
+        <form
+          action="https://formspree.io/f/yourformid"
+          method="POST"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+            style={{
+              padding: "12px",
+              width: "70%",
+              marginRight: "10px",
+              borderRadius: "6px",
+              border: "1px solid #ccc"
+            }}
+          />
+
+          <button
+            type="submit"
+            style={{
+              padding: "12px 20px",
+              borderRadius: "6px",
+              border: "none",
+              background: "black",
+              color: "white",
+              cursor: "pointer"
+            }}
+          >
+            Join Waitlist
+          </button>
+        </form>
+
+      </div>
+
+      <p style={{marginTop: "40px", fontSize: "14px", opacity: 0.6}}>
+        © {new Date().getFullYear()} Adrift Works
       </p>
 
-      <button style={{padding:"12px 24px", fontSize:"16px"}}>
-        Join Waitlist
-      </button>
     </main>
-  )
+  );
 }
