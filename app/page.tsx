@@ -119,7 +119,6 @@ padding: "40px"
   </section>
 
 </main>
-```
 
 )
 }
