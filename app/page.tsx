@@ -1,124 +1,64 @@
 export default function Home() {
-return (
-<main style={{
-background: "#0a0a0a",
-color: "#ffffff",
-fontFamily: "sans-serif",
-minHeight: "100vh",
-padding: "40px"
-}}>
+  return (
+    <main className="bg-black text-white min-h-screen">
 
-```
-  {/* HERO */}
+      {/* HERO */}
+      <section className="flex flex-col items-center justify-center text-center py-32 px-6">
+        <h1 className="text-5xl md:text-7xl font-bold">
+          Creative Technology Studio
+        </h1>
 
-  <section style={{ marginBottom: "80px" }}>
-    <h1 style={{ fontSize: "64px", marginBottom: "10px" }}>
-      ADRIFT WORKS
-    </h1>
+        <p className="text-gray-400 mt-6 max-w-2xl">
+          Building AI tools, game technology, and experimental software.
+        </p>
 
-    <p style={{ fontSize: "22px", color: "#aaa" }}>
-      Creative Technology Studio
-    </p>
+        <div className="mt-10 flex gap-6">
+          <a
+            href="/projects"
+            className="px-6 py-3 border border-white hover:bg-white hover:text-black transition"
+          >
+            View Projects
+          </a>
 
-    <p style={{ marginTop: "20px", maxWidth: "600px" }}>
-      Building experimental software, AI systems, and interactive worlds.
-    </p>
-  </section>
+          <a
+            href="/contact"
+            className="px-6 py-3 border border-gray-600 hover:border-white transition"
+          >
+            Work With Us
+          </a>
+        </div>
+      </section>
 
+      {/* PROJECTS */}
+      <section className="px-8 pb-32">
+        <h2 className="text-3xl mb-10">Featured Work</h2>
 
-  {/* PROJECT GRID */}
+        <div className="grid md:grid-cols-3 gap-8">
 
-  <section style={{ marginBottom: "80px" }}>
-    <h2 style={{ fontSize: "32px", marginBottom: "20px" }}>
-      Featured Projects
-    </h2>
+          <div className="border border-gray-800 p-6 hover:border-white transition">
+            <h3 className="text-xl">AI Writing Engine</h3>
+            <p className="text-gray-400 mt-2">
+              AI system for long-form content generation.
+            </p>
+          </div>
 
-    <div style={{
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))",
-      gap: "20px"
-    }}>
+          <div className="border border-gray-800 p-6 hover:border-white transition">
+            <h3 className="text-xl">Procedural Game Engine</h3>
+            <p className="text-gray-400 mt-2">
+              Experimental game world generator.
+            </p>
+          </div>
 
-      <div style={{ background: "#111", padding: "20px" }}>
-        <h3>AI Indie Game Idea Generator</h3>
-        <p>Generate unique indie game concepts.</p>
-      </div>
+          <div className="border border-gray-800 p-6 hover:border-white transition">
+            <h3 className="text-xl">Creative AI Lab</h3>
+            <p className="text-gray-400 mt-2">
+              Internal tools for creators and developers.
+            </p>
+          </div>
 
-      <div style={{ background: "#111", padding: "20px" }}>
-        <h3>Procedural World Builder</h3>
-        <p>Tools for creating dynamic game worlds.</p>
-      </div>
+        </div>
+      </section>
 
-      <div style={{ background: "#111", padding: "20px" }}>
-        <h3>Automation Toolkit</h3>
-        <p>AI systems that automate creative workflows.</p>
-      </div>
-
-    </div>
-  </section>
-
-
-  {/* SERVICES */}
-
-  <section style={{ marginBottom: "80px" }}>
-    <h2 style={{ fontSize: "32px", marginBottom: "20px" }}>
-      Services
-    </h2>
-
-    <p>AI Systems • Game Development • Creative Technology Consulting</p>
-  </section>
-
-
-  {/* CONTACT FORM */}
-
-  <section>
-    <h2 style={{ fontSize: "32px", marginBottom: "20px" }}>
-      Work With Us
-    </h2>
-
-    <form action="https://formspree.io/f/mdawlyab" method="POST">
-
-      <input
-        type="text"
-        name="name"
-        placeholder="Your name"
-        required
-        style={{ display: "block", marginBottom: "10px", padding: "10px", width: "300px" }}
-      />
-
-      <input
-        type="email"
-        name="email"
-        placeholder="Your email"
-        required
-        style={{ display: "block", marginBottom: "10px", padding: "10px", width: "300px" }}
-      />
-
-      <textarea
-        name="message"
-        placeholder="Tell me about your project..."
-        rows="5"
-        required
-        style={{ display: "block", marginBottom: "10px", padding: "10px", width: "300px" }}
-      ></textarea>
-
-      <button
-        type="submit"
-        style={{
-          padding: "10px 20px",
-          background: "#00ffd5",
-          border: "none",
-          color: "#000",
-          fontWeight: "bold"
-        }}
-      >
-        Send Message
-      </button>
-
-    </form>
-  </section>
-
-</main>
-
-)
+    </main>
+  );
 }
