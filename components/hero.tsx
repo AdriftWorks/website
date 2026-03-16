@@ -1,5 +1,5 @@
 "use client"
-
+import BackgroundAnimation from "@/components/BackgroundAnimation"
 import { motion } from "framer-motion"
 
 export default function Hero() {
