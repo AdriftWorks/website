@@ -89,6 +89,8 @@ export default function About() {
         </p>
       </section>
 
+        </div>
+
     </main>
   );
 }
