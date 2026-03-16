@@ -1,9 +1,14 @@
+"use client"
+import BackgroundAnimation from "@/components/BackgroundAnimation"
+
 export default function About() {
   return (
-    <main className="max-w-4xl mx-auto px-6 py-16 space-y-12">
+    <main className="relative min-h-screen px-6 py-16">
+      <BackgroundAnimation />
 
-      {/* Header */}
-      <section className="space-y-4">
+      <div className="max-w-4xl mx-auto space-y-12 text-white">
+        {/* Header */}
+        <section className="space-y-4">
         <h1 className="text-4xl font-bold">About AdriftWorks</h1>
 
         <p className="text-neutral-400">
