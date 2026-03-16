@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 export default function BackgroundAnimation() {
   const circles = Array.from({ length: 20 }, (_, i) => i)
   return (
-    <div className="absolute inset-0 overflow-hidden -z-10">
+    <div className="fixed inset-0 -z-10">
       {circles.map((i) => (
         <motion.div
           key={i}
