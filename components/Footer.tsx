@@ -4,6 +4,7 @@ export default function Footer() {
   return (
     <footer className="bg-neutral-900 text-gray-400 py-8 mt-20 border-t border-neutral-800">
       <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        
         <p className="text-sm">
           © {new Date().getFullYear()} Adrift Works. All rights reserved.
         </p>
@@ -34,6 +35,7 @@ export default function Footer() {
             Contact
           </a>
         </div>
+
       </div>
     </footer>
   )
