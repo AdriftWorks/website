@@ -1,6 +1,7 @@
 import Hero from "@/components/hero"
 import FeaturedProjects from "@/components/featured-projects"
 import Contact from "@/components/contact"
+import Footer from "@/components/Footer"
 
 export default function Home() {
   return (
