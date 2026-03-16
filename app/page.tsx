@@ -1,5 +1,6 @@
 export default function Home() {
   return (
+    import ProjectCard from "../components/ProjectCard";
     <main className="bg-black text-white min-h-screen">
 
       {/* HERO */}
@@ -30,11 +31,33 @@ export default function Home() {
       </section>
 
       {/* PROJECTS */}
-      <section className="px-8 pb-32">
-        <h2 className="text-3xl mb-10">Featured Work</h2>
+      <div className="mt-16">
 
-        <div className="grid md:grid-cols-3 gap-8">
+<h2 className="text-2xl font-bold mb-6">
+Featured Projects
+</h2>
 
+<div className="grid md:grid-cols-3 gap-6">
+
+<ProjectCard
+title="AI Indie Game Idea Generator"
+description="Generate unique indie game concepts."
+link="/projects/ai-game-generator"
+/>
+
+<ProjectCard
+title="Procedural World Builder"
+description="Tools for creating dynamic game worlds."
+link="/projects/world-builder"
+/>
+
+<ProjectCard
+title="Automation Toolkit"
+description="AI systems that automate creative workflows."
+link="/projects/automation"
+/>
+
+          <projectcard
           <div className="border border-gray-800 p-6 hover:border-white transition">
             <h3 className="text-xl">AI Writing Engine</h3>
             <p className="text-gray-400 mt-2">
@@ -42,6 +65,7 @@ export default function Home() {
             </p>
           </div>
 
+          <projectcard
           <div className="border border-gray-800 p-6 hover:border-white transition">
             <h3 className="text-xl">Procedural Game Engine</h3>
             <p className="text-gray-400 mt-2">
@@ -49,6 +73,7 @@ export default function Home() {
             </p>
           </div>
 
+          <projectcard
           <div className="border border-gray-800 p-6 hover:border-white transition">
             <h3 className="text-xl">Creative AI Lab</h3>
             <p className="text-gray-400 mt-2">
