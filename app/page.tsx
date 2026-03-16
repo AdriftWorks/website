@@ -2,6 +2,7 @@ import Hero from "@/components/hero"
 import FeaturedProjects from "@/components/featured-projects"
 import Contact from "@/components/contact"
 import Footer from "@/components/Footer"
+import BackgroundAnimation from "@/components/BackgroundAnimation"
 
 export default function Home() {
   return (
@@ -14,6 +15,8 @@ export default function Home() {
       <Contact />
 
        <Footer />
+
+      <BackgroundAnimation />
 
     </main>
   );
