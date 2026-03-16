@@ -3,7 +3,7 @@ import { motion } from "framer-motion"
 
 export default function Hero() {
   return (
-    <section className="relative z-10 h-screen flex flex-col items-center justify-center bg-gradient-indie text-white px-6">
+   <section className="relative z-10 h-screen flex flex-col items-center justify-center text-white px-6"> 
 
       {/* Studio Name Animation */}
       <motion.h1
