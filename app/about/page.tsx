@@ -1,53 +1,89 @@
 export default function About() {
   return (
-    <div className="space-y-4">
-      <h1 className="text-3xl font-bold">About</h1>
+    <main className="max-w-4xl mx-auto px-6 py-16 space-y-12">
 
-      <p className="text-neutral-400">
-        About AdriftWorks
+      {/* Header */}
+      <section className="space-y-4">
+        <h1 className="text-4xl font-bold">About AdriftWorks</h1>
 
-AdriftWorks is an independent creative technology studio focused on building games, intelligent software, experimental hardware, and digital tools.
+        <p className="text-neutral-400">
+          AdriftWorks is an independent creative technology studio focused on
+          building games, intelligent software, experimental hardware, and
+          digital tools.
+        </p>
 
-The studio operates at the intersection of creativity, engineering, and emerging technology — exploring how small teams and modern AI can build powerful products, immersive worlds, and scalable digital systems.
+        <p className="text-neutral-400">
+          The studio operates at the intersection of creativity, engineering,
+          and emerging technology — exploring how small teams and modern AI can
+          build powerful products, immersive worlds, and scalable digital systems.
+        </p>
+      </section>
 
-AdriftWorks develops projects across several internal divisions:
+      {/* Divisions */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold">Studio Divisions</h2>
 
-Blackframe Interactive – game development and original IP
-Nexori Labs – AI tools and SaaS platforms
-Obsidian Circuit – hardware experiments and device engineering
-Daedal Labs – research and experimental technology
+        <ul className="space-y-2 text-neutral-400">
+          <li><strong>Blackframe Interactive</strong> – game development and original IP</li>
+          <li><strong>Nexori Labs</strong> – AI tools and SaaS platforms</li>
+          <li><strong>Obsidian Circuit</strong> – hardware experiments and device engineering</li>
+          <li><strong>Daedal Labs</strong> – research and experimental technology</li>
+        </ul>
+      </section>
 
-Our mission is simple:
+      {/* Mission */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold">Mission</h2>
 
-Build interesting things. Document the journey. Turn ideas into real systems.
+        <p className="text-neutral-400">
+          Build interesting things. Document the journey. Turn ideas into real systems.
+        </p>
 
-The studio believes the future of technology will be driven by independent creators who combine software, AI, and hardware to build new types of products and experiences.
+        <p className="text-neutral-400">
+          The studio believes the future of technology will be driven by
+          independent creators who combine software, AI, and hardware to build
+          new types of products and experiences.
+        </p>
 
-AdriftWorks exists to explore that future.
+        <p className="text-neutral-400">
+          AdriftWorks exists to explore that future.
+        </p>
+      </section>
 
-⸻
+      {/* Founder */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold">Founder</h2>
 
-Founder
+        <p className="text-neutral-400">
+          AdriftWorks was founded by <strong>Kyle Mashburn</strong>, a builder
+          and technologist exploring the intersection of game development,
+          artificial intelligence, software systems, and creative engineering.
+        </p>
 
-AdriftWorks was founded by Kyle Mashburn, a builder and technologist exploring the intersection of game development, artificial intelligence, software systems, and creative engineering.
+        <p className="text-neutral-400">
+          The studio operates as an evolving lab where ideas are tested,
+          built, and refined in public — turning experiments into real
+          products, tools, and worlds.
+        </p>
+      </section>
 
-The studio operates as an evolving lab where ideas are tested, built, and refined in public — turning experiments into real products, tools, and worlds.
+      {/* Philosophy */}
+      <section className="space-y-4">
+        <h2 className="text-2xl font-semibold">Philosophy</h2>
 
-⸻
+        <ul className="space-y-2 text-neutral-400">
+          <li>Small teams can build powerful technology</li>
+          <li>AI accelerates creativity and engineering</li>
+          <li>Games and software are forms of digital craftsmanship</li>
+          <li>The best way to learn is to build in the open</li>
+        </ul>
 
-Philosophy
+        <p className="text-neutral-400">
+          AdriftWorks is not just a company. It’s a long-term experiment in
+          building a modern creative technology studio from the ground up.
+        </p>
+      </section>
 
-We believe:
-
-• Small teams can build powerful technology
-• AI accelerates creativity and engineering
-• Games and software are forms of digital craftsmanship
-• The best way to learn is to build in the open
-
-AdriftWorks is not just a company.
-
-It’s a long-term experiment in building a modern creative technology studio from the ground up.
-      </p>
-    </div>
+    </main>
   );
 }
