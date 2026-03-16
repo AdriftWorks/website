@@ -2,21 +2,29 @@
 
 import { motion } from "framer-motion"
 
-export default function Hero(){
+export default function Hero() {
+  return (
+    <section className="h-screen flex flex-col items-center justify-center bg-gradient-indie text-white">
+      <motion.h1
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 1 }}
+        className="text-6xl font-heading mb-4"
+      >
+        Adrift Works
+      </motion.h1>
 
-return(
-
-<section className="relative flex flex-col items-center justify-center text-center py-40 px-6 overflow-hidden">
-
-<motion.h1
-initial={{opacity:0,y:40}}
-animate={{opacity:1,y:0}}
-transition={{duration:1}}
-className="text-5xl md:text-7xl font-bold"
->
-
-Creative Technology Studio
-
+      <motion.div
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1, duration: 1 }}
+        className="text-3xl font-body"
+      >
+        Creative Technology Studio
+      </motion.div>
+    </section>
+  );
+}
 </motion.h1>
 
 <motion.p
