@@ -1,29 +1,23 @@
-import Link from "next/link"
+import Link from "next/link";
 
 export default function Navbar() {
-return (
-<nav
-style={{
-display: "flex",
-justifyContent: "space-between",
-padding: "20px 40px",
-background: "#0a0a0a",
-borderBottom: "1px solid #111"
-}}
->
-<div style={{ fontWeight: "bold" }}>
-ADRIFT WORKS </div>
+  return (
+    <nav className="w-full border-b border-neutral-800 bg-black text-white">
+      <div className="max-w-6xl mx-auto flex items-center justify-between p-4">
 
-```
-  <div style={{ display: "flex", gap: "20px" }}>
-    <Link href="/">Home</Link>
-    <Link href="/studio">Studio</Link>
-    <Link href="/projects">Projects</Link>
-    <Link href="/tools">Tools</Link>
-    <Link href="/contact">Contact</Link>
-  </div>
-</nav>
-```
+        <Link href="/" className="text-xl font-bold">
+          Adrift Works
+        </Link>
 
-)
+        <div className="flex gap-6 text-sm">
+          <Link href="/projects">Projects</Link>
+          <Link href="/tools">Tools</Link>
+          <Link href="/labs">Labs</Link>
+          <Link href="/about">About</Link>
+          <Link href="/contact">Contact</Link>
+        </div>
+
+      </div>
+    </nav>
+  );
 }
