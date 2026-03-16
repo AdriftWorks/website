@@ -88,9 +88,7 @@ export default function About() {
           building a modern creative technology studio from the ground up.
         </p>
       </section>
-
-        </div>
-
+      </div>
     </main>
   );
 }
