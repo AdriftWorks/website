@@ -1,10 +1,10 @@
 "use client"
-import BackgroundAnimation from "@/components/BackgroundAnimation"
 import { motion } from "framer-motion"
 
 export default function Hero() {
   return (
-    <section className="h-screen flex flex-col items-center justify-center bg-gradient-indie text-white px-6">
+    <section className="relative z-10 h-screen flex flex-col items-center justify-center bg-gradient-indie text-white px-6">
+
       {/* Studio Name Animation */}
       <motion.h1
         initial={{ opacity: 0, scale: 0.8 }}
@@ -15,7 +15,7 @@ export default function Hero() {
         Adrift Works
       </motion.h1>
 
-      {/* Tagline fades in after */}
+      {/* Tagline */}
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
@@ -25,7 +25,7 @@ export default function Hero() {
         Creative Technology Studio
       </motion.div>
 
-      {/* Sub-description */}
+      {/* Description */}
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -35,7 +35,7 @@ export default function Hero() {
         Building AI tools, game technology, and experimental software.
       </motion.p>
 
-      {/* CTA Buttons */}
+      {/* Buttons */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -56,6 +56,7 @@ export default function Hero() {
           Work With Us
         </a>
       </motion.div>
+
     </section>
   )
 }
