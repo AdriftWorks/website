@@ -1,33 +1,31 @@
-import Link from "next/link";
+"use client"
 
-export default function ProjectCard({ title, description, link }) {
-  return (
-    <Link href={link}>
+import Link from "next/link"
+import { motion } from "framer-motion"
 
-      <div className="
-        bg-neutral-900
-        border border-neutral-800
-        rounded-xl
-        p-6
-        transition-all
-        duration-300
-        hover:border-blue-500
-        hover:scale-[1.03]
-        hover:shadow-xl
-        hover:shadow-blue-500/10
-        cursor-pointer
-      ">
+export default function ProjectCard({title,description,link}:{title:string,description:string,link:string}){
 
-        <h3 className="text-lg font-semibold mb-2">
-          {title}
-        </h3>
+return(
 
-        <p className="text-neutral-400 text-sm">
-          {description}
-        </p>
+<Link href={link}>
 
-      </div>
+<motion.div
+whileHover={{scale:1.05}}
+className="bg-neutral-900 border border-neutral-800 p-6 rounded-xl transition hover:border-white"
+>
 
-    </Link>
-  );
+<h3 className="text-xl font-semibold mb-2">
+{title}
+</h3>
+
+<p className="text-gray-400">
+{description}
+</p>
+
+</motion.div>
+
+</Link>
+
+)
+
 }
