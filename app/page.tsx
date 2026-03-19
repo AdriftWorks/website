@@ -1,25 +1,17 @@
 import Hero from "@/components/hero"
-import FeaturedProjects from "@/components/featured-projects"
-import Contact from "@/components/contact"
-import Footer from "@/components/Footer"
-import BackgroundAnimation from "@/components/BackgroundAnimation"
 import IdentityStrip from "@/components/sections/IdentityStrip"
+import BackgroundAnimation from "@/components/BackgroundAnimation"
 
 export default function Home() {
   return (
-    <main className="bg-black text-white min-h-screen">
+    <main className="relative bg-black text-white min-h-screen overflow-hidden">
 
-      <Hero />
-
-      <FeaturedProjects />
-
-      <Contact />
-
-       <IdentityStrip />
-
-       <Footer />
-
+      {/* Background */}
       <BackgroundAnimation />
+
+      {/* Content */}
+      <Hero />
+      <IdentityStrip />
 
     </main>
   );
