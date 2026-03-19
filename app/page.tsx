@@ -1,5 +1,5 @@
 import Hero from "@/components/hero"
-import IdentityStrip from "@/components/sections/IdentityStrip"
+import IdentityStrip from "@/components/IdentityStrip"
 import BackgroundAnimation from "@/components/BackgroundAnimation"
 
 export default function Home() {
