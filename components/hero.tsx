@@ -10,7 +10,7 @@ export default function Hero() {
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 1 }}
-        className="text-6xl md:text-7xl font-heading mb-4 text-center"
+        className="text-6xl md:text-7xl font-heading mb-6 text-center"
       >
         Adrift Works
       </motion.h1>
