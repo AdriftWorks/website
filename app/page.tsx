@@ -3,6 +3,7 @@ import FeaturedProjects from "@/components/featured-projects"
 import Contact from "@/components/contact"
 import Footer from "@/components/Footer"
 import BackgroundAnimation from "@/components/BackgroundAnimation"
+import IdentityStrip from "@/components/sections/IdentityStrip"
 
 export default function Home() {
   return (
@@ -13,6 +14,8 @@ export default function Home() {
       <FeaturedProjects />
 
       <Contact />
+
+       <IdentityStrip />
 
        <Footer />
 
