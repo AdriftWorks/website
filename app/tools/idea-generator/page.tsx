@@ -67,8 +67,8 @@ export default function IdeaGenerator() {
       </form>
 
       {result && (
-        <pre className="bg-neutral-900 text-white p-4 rounded">{result}</pre>
-      )}
-    </div>
-  );
+  <div className="whitespace-pre-wrap bg-neutral-900 text-white p-4 rounded">
+    {result}
+  </div>
+)}
 }
