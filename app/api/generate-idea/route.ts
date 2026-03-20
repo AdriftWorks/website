@@ -4,20 +4,21 @@ export async function POST(req: Request) {
   const { skills, interests, experience } = await req.json()
 
   const prompt = `
-You are a startup strategist.
+You are an expert startup strategist. Given a user's profile, generate a detailed, structured response.
 
-Given:
-Skills: ${skills}
-Interests: ${interests}
-Experience: ${experience}
+Input:
+- Skills: {skills}
+- Interests: {interests}
+- Experience: {experience}
 
-Generate:
+Output format (JSON):
+{
+  "idea": "One-line description of the startup idea",
+  "monetization": "How this idea could generate revenue",
+  "next_steps": ["Step 1", "Step 2", "Step 3"]
+}
 
-1. A startup idea
-2. How it makes money
-3. First 3 steps to start
-
-Keep it clear and actionable.
+Keep it clear, concise, and actionable. Avoid vague language.
 `
 
   try {
