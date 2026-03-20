@@ -24,7 +24,7 @@ export default function IdeaGenerator() {
       if (!res.ok) throw new Error("API error");
 
       const data = await res.json();
-      setResult(JSON.stringify(data, null, 2));
+      setResult(data.result || "No result");
     } catch (err: any) {
       setResult(`Error: ${err.message}`);
     } finally {
@@ -67,8 +67,10 @@ export default function IdeaGenerator() {
       </form>
 
       {result && (
-  <div className="whitespace-pre-wrap bg-neutral-900 text-white p-4 rounded">
-    {result}
-  </div>
-)}
+        <div className="whitespace-pre-wrap bg-neutral-900 text-white p-4 rounded">
+          {result}
+        </div>
+      )}
+    </div>
+  );
 }
