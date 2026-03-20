@@ -1,88 +1,74 @@
-'use client'
+"use client";
 
-import { useState } from 'react'
+import { useState } from "react";
 
-export default function IdeaGeneratorPage() {
-  const [skills, setSkills] = useState('')
-  const [interests, setInterests] = useState('')
-  const [experience, setExperience] = useState('')
-  const [output, setOutput] = useState('')
-  const [loading, setLoading] = useState(false)
+export default function IdeaGenerator() {
+  const [skills, setSkills] = useState("");
+  const [interests, setInterests] = useState("");
+  const [experience, setExperience] = useState("");
+  const [result, setResult] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleGenerate = async () => {
-    setLoading(true)
-    setOutput('')
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setLoading(true);
+    setResult("");
 
     try {
-      const res = await fetch('/api/generate-idea', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          skills,
-          interests,
-          experience,
-        }),
-      })
+      const res = await fetch("/api/generate-idea", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ skills, interests, experience }),
+      });
 
-      const data = await res.json()
-      setOutput(data.result)
-    } catch (err) {
-      setOutput('Something went wrong.')
+      if (!res.ok) throw new Error("API error");
+
+      const data = await res.json();
+      setResult(JSON.stringify(data, null, 2));
+    } catch (err: any) {
+      setResult(`Error: ${err.message}`);
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false)
-  }
+  };
 
   return (
-    <main className="max-w-2xl mx-auto px-6 py-16">
-      <h1 className="text-3xl font-semibold mb-4">
-        AI Startup Idea Generator
-      </h1>
+    <div className="space-y-4 p-4">
+      <h1 className="text-2xl font-bold">AI Startup Idea Generator</h1>
 
-      <p className="text-gray-600 mb-8">
-        Enter your skills, interests, and experience to generate a startup idea.
-      </p>
-
-      <div className="space-y-4">
+      <form onSubmit={handleSubmit} className="space-y-2 max-w-md">
         <input
           type="text"
-          placeholder="Skills (e.g. coding, design, marketing)"
-          className="w-full border rounded-lg px-4 py-3"
+          placeholder="Skills"
           value={skills}
           onChange={(e) => setSkills(e.target.value)}
+          className="input"
+          required
         />
-
         <input
           type="text"
-          placeholder="Interests (e.g. fitness, AI, gaming)"
-          className="w-full border rounded-lg px-4 py-3"
+          placeholder="Interests"
           value={interests}
           onChange={(e) => setInterests(e.target.value)}
+          className="input"
+          required
         />
-
         <input
           type="text"
-          placeholder="Experience (e.g. freelancing, startup, corporate)"
-          className="w-full border rounded-lg px-4 py-3"
+          placeholder="Experience"
           value={experience}
           onChange={(e) => setExperience(e.target.value)}
+          className="input"
+          required
         />
-
-        <button
-          onClick={handleGenerate}
-          className="w-full bg-black text-white rounded-lg py-3 hover:opacity-90 transition"
-        >
-          {loading ? 'Generating...' : 'Generate Idea'}
+        <button type="submit" className="btn" disabled={loading}>
+          {loading ? "Generating..." : "Generate Idea"}
         </button>
-      </div>
+      </form>
 
-      {output && (
-        <div className="mt-10 p-6 border rounded-lg bg-gray-50 whitespace-pre-wrap">
-          {output}
-        </div>
+      {result && (
+        <pre className="bg-neutral-900 text-white p-4 rounded">{result}</pre>
       )}
-    </main>
-  )
+    </div>
+  );
 }
