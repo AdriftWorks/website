@@ -1,38 +1,47 @@
 import { NextRequest, NextResponse } from "next/server";
 import OpenAI from "openai";
-console.log("OPENAI_API_KEY:", process.env.OPENAI_API_KEY);
 
-const openai = new OpenAI({ apiKey: process.env.OPENAI_API_KEY });
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY || "",
+});
 
 export async function POST(req: NextRequest) {
   try {
-    const { skills, interests, experience } = await req.json();
+    const body = await req.json();
+    const skills = body.skills || "";
+    const interests = body.interests || "";
+    const experience = body.experience || "";
 
     const prompt = `
-      You are an expert startup strategist.
-      Given the following user profile, generate a startup idea with monetization strategy and next steps.
+You are an expert startup strategist.
+Given the following user profile, generate a startup idea with monetization strategy and next steps.
 
-      Skills: ${skills}
-      Interests: ${interests}
-      Experience: ${experience}
+Skills: ${skills}
+Interests: ${interests}
+Experience: ${experience}
 
-      Output format:
+Output format:
 
-      Startup Idea:
-      Monetization:
-      Next Steps:
-    `;
+Startup Idea:
+Monetization:
+Next Steps:
+`;
 
-    const completion = await openai.chat.completions.create({
+    const response = await openai.chat.completions.create({
       model: "gpt-4o-mini",
       messages: [{ role: "user", content: prompt }],
-      temperature: 0.7,
     });
 
-    const text = completion.choices?.[0]?.message?.content || "No result";
+    // Safe access
+    const text =
+      response.choices?.[0]?.message?.content?.trim() || "No result";
 
     return NextResponse.json({ result: text });
-  } catch (err: any) {
-    return NextResponse.json({ result: `Error: ${err.message}` }, { status: 500 });
+  } catch (error: any) {
+    console.error("OpenAI error:", error);
+    return NextResponse.json(
+      { result: `Error: ${error.message}` },
+      { status: 500 }
+    );
   }
 }
