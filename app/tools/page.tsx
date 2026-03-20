@@ -7,7 +7,7 @@ export default function Tools() {
       description: "Generate startup ideas, monetization strategies, and next steps.",
       href: "/tools/idea-generator",
     },
-    // future tools go here
+    // add future tools here
   ];
 
   return (
