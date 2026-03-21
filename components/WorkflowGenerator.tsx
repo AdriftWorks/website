@@ -4,74 +4,45 @@ import { useState } from "react"
 export default function WorkflowGenerator() {
   const [industry, setIndustry] = useState("")
   const [goal, setGoal] = useState("")
+  const [scale, setScale] = useState("")
+  const [style, setStyle] = useState("")
   const [business, setBusiness] = useState("")
   const [result, setResult] = useState<any>(null)
 
   const generateWorkflow = () => {
     if (!industry || !goal) return
 
-    const workflows: any = {
-      fitness: {
-        leads: {
-          title: "AI Lead Generation System",
-          overview:
-            "A system designed to consistently generate and convert fitness leads.",
-          steps: [
-            "Create a landing page offering a free workout guide",
-            "Capture emails using a form",
-            "Send automated email follow-ups",
-            "Use AI to generate daily fitness content",
-            "Convert leads into booked calls",
-          ],
-          tools: ["Notion", "Zapier", "Email Platform"],
-          outcome:
-            "A consistent pipeline of inbound leads with automated nurturing.",
-        },
-      },
-      real_estate: {
-        leads: {
-          title: "Real Estate Lead Funnel",
-          overview:
-            "A streamlined system to capture, nurture, and convert property leads.",
-          steps: [
-            "Create a buyer/seller lead magnet",
-            "Capture leads via landing page",
-            "Automate SMS/email follow-ups",
-            "Post AI-generated listings content",
-            "Route leads into booking calls",
-          ],
-          tools: ["CRM", "Zapier", "SMS Automation"],
-          outcome:
-            "Automated pipeline of qualified real estate prospects.",
-        },
-      },
+    const base = {
+      title: "AI Workflow System",
+      overview: `A ${scale || "scalable"} system designed for ${industry} businesses focused on ${goal}.`,
+      steps: [
+        "Define your core offer and target audience",
+        "Create a simple landing page or entry point",
+        "Capture leads or user input",
+        "Automate follow-up communication",
+        "Generate ongoing content using AI",
+        "Convert leads into paying clients",
+      ],
+      tools: ["Notion", "Zapier", "Email Platform"],
+      outcome:
+        "A streamlined system that generates, nurtures, and converts leads with minimal manual work.",
     }
 
-    const data =
-      workflows[industry]?.[goal] || {
-        title: "Custom AI Workflow",
-        overview:
-          "A flexible workflow tailored to automate and scale your business operations.",
-        steps: [
-          "Define your core offer",
-          "Capture leads through a simple funnel",
-          "Automate follow-up communication",
-          "Generate content using AI tools",
-          "Convert leads into paying clients",
-        ],
-        tools: ["Notion", "Automation Tools"],
-        outcome:
-          "A streamlined, scalable system that reduces manual work and increases output.",
-      }
+    // Style variation
+    if (style === "detailed") {
+      base.steps = base.steps.map(
+        (step, i) =>
+          `${step} — optimized with automation and minimal manual effort`
+      )
+    }
 
-    setResult(data)
+    setResult(base)
   }
 
   return (
     <section className="py-16 px-4">
       <div className="max-w-3xl mx-auto">
 
-        {/* HEADER */}
         <div className="mb-10 text-center">
           <h2 className="text-2xl md:text-3xl font-semibold mb-2">
             AI Workflow Generator
@@ -84,126 +55,96 @@ export default function WorkflowGenerator() {
         {/* INPUTS */}
         <div className="space-y-4 mb-8">
 
-          <select
-            onChange={(e) => setIndustry(e.target.value)}
-            className="w-full p-3 bg-black border border-white/10 rounded-lg"
-          >
+          <select onChange={(e) => setIndustry(e.target.value)} className="input">
             <option value="">Select Industry</option>
             <option value="fitness">Fitness</option>
             <option value="real_estate">Real Estate</option>
+            <option value="ecommerce">E-Commerce</option>
           </select>
 
-          <select
-            onChange={(e) => setGoal(e.target.value)}
-            className="w-full p-3 bg-black border border-white/10 rounded-lg"
-          >
+          <select onChange={(e) => setGoal(e.target.value)} className="input">
             <option value="">Select Goal</option>
-            <option value="leads">Lead Generation</option>
+            <option value="lead generation">Lead Generation</option>
+            <option value="content growth">Content Growth</option>
+            <option value="automation">Automation</option>
+          </select>
+
+          <select onChange={(e) => setScale(e.target.value)} className="input">
+            <option value="">Select Scale</option>
+            <option value="solo">Solo</option>
+            <option value="small team">Small Team</option>
+            <option value="agency">Agency</option>
+          </select>
+
+          <select onChange={(e) => setStyle(e.target.value)} className="input">
+            <option value="">Output Style</option>
+            <option value="simple">Simple</option>
+            <option value="detailed">Detailed</option>
           </select>
 
           <input
             placeholder="Business type (optional)"
             onChange={(e) => setBusiness(e.target.value)}
-            className="w-full p-3 bg-black border border-white/10 rounded-lg"
+            className="input"
           />
 
           <button
             onClick={generateWorkflow}
-            className="w-full py-3 bg-white text-black rounded-lg font-medium hover:opacity-90 transition"
+            className="w-full py-3 bg-white text-black rounded-lg font-medium"
           >
             Generate Workflow
           </button>
-
         </div>
 
         {/* OUTPUT */}
         {result && (
-          <div className="border border-white/10 rounded-xl p-6 space-y-6 bg-white/[0.02]">
+          <div className="card">
 
-            {/* Label */}
-            <div>
-              <span className="text-xs uppercase tracking-wide text-zinc-500">
-                Generated Workflow
-              </span>
-            </div>
+            <span className="label">Generated Workflow</span>
 
-            {/* Title */}
-            <div>
-              <h3 className="text-2xl font-semibold">
-                {result.title}
-              </h3>
-              <p className="text-xs text-zinc-500 mt-1">
-                Generated for: {business || industry}
-              </p>
-            </div>
-
-            {/* Overview */}
-            <p className="text-zinc-400">
-              {result.overview}
+            <h3 className="title">{result.title}</h3>
+            <p className="meta">
+              Generated for: {business || industry}
             </p>
 
-            {/* Steps */}
+            <p className="text-zinc-400">{result.overview}</p>
+
             <div>
-              <h4 className="font-medium mb-3">System Breakdown</h4>
+              <h4 className="section">System Breakdown</h4>
               <div className="space-y-3">
                 {result.steps.map((step: string, i: number) => (
-                  <div
-                    key={i}
-                    className="p-3 border border-white/10 rounded-lg bg-black/30"
-                  >
-                    <span className="text-xs text-zinc-500">
-                      Step {i + 1}
-                    </span>
-                    <p className="text-zinc-300">{step}</p>
+                  <div key={i} className="step">
+                    <span className="step-label">Step {i + 1}</span>
+                    <p>{step}</p>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Tools */}
             <div>
-              <h4 className="font-medium mb-2">Tools</h4>
-              <p className="text-zinc-400">
-                {result.tools.join(", ")}
-              </p>
+              <h4 className="section">Tools</h4>
+              <p className="text-zinc-400">{result.tools.join(", ")}</p>
             </div>
 
-            {/* Outcome */}
             <div>
-              <h4 className="font-medium mb-2">Outcome</h4>
-              <p className="text-zinc-400">
-                {result.outcome}
-              </p>
+              <h4 className="section">Outcome</h4>
+              <p className="text-zinc-400">{result.outcome}</p>
             </div>
 
-            {/* Why It Works */}
             <div>
-              <h4 className="font-medium mb-2">Why This Works</h4>
+              <h4 className="section">Why This Works</h4>
               <p className="text-zinc-400 text-sm">
-                This workflow combines automation, consistent content, and structured
-                lead capture to create a scalable system that runs with minimal manual effort.
+                This workflow combines automation and structured processes to create consistent, scalable results.
               </p>
             </div>
 
-            {/* CTA */}
-            <div className="pt-6 border-t border-white/10">
-
-              <h4 className="text-lg font-semibold mb-2">
-                Want this system built for you?
+            <div className="cta">
+              <h4 className="font-semibold mb-2">
+                Want this built for you?
               </h4>
-
-              <p className="text-zinc-400 text-sm mb-4">
-                We’ll set up this exact workflow for your business — automation,
-                tools, and structure included.
-              </p>
-
-              <a
-                href="/contact"
-                className="inline-block px-6 py-3 bg-white text-black rounded-lg font-medium hover:opacity-90 transition"
-              >
+              <a href="/contact" className="btn">
                 Request Setup
               </a>
-
             </div>
 
           </div>
