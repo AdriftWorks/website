@@ -1,26 +1,19 @@
 // components/sections/CTA.tsx
+<div className="pt-6 border-t border-white/10 mt-6">
 
-export default function CTA() {
-  return (
-    <section className="py-20 px-6">
-      <div className="max-w-5xl mx-auto text-center">
+  <h4 className="text-lg font-semibold mb-2">
+    Want this system built for you?
+  </h4>
 
-        <h2 className="text-2xl md:text-3xl font-semibold mb-4">
-          Need Something Built?
-        </h2>
+  <p className="text-zinc-400 text-sm mb-4">
+    We’ll set up this exact workflow for your business — automation, tools, and structure included.
+  </p>
 
-        <p className="text-zinc-400 mb-8">
-          We design and build AI systems, tools, and workflows tailored to your business.
-        </p>
+  <a
+    href="/contact"
+    className="inline-block px-6 py-3 bg-white text-black rounded-lg font-medium hover:opacity-90 transition"
+  >
+    Request Setup
+  </a>
 
-        <a
-          href="/contact"
-          className="px-6 py-3 border border-white/20 rounded-xl hover:bg-white/10 transition"
-        >
-          Request a Build
-        </a>
-
-      </div>
-    </section>
-  )
-}
+</div>
