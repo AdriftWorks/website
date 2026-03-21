@@ -105,6 +105,9 @@ export default function WorkflowGenerator() {
           <div className="border border-white/10 rounded-xl p-6 space-y-4">
             <h3 className="text-xl font-semibold">{result.title}</h3>
             <p className="text-zinc-400">{result.overview}</p>
+            <p className="text-xs text-zinc-500 mb-2">
+  Generated for: {business || industry}
+</p>
 
             <div>
               <h4 className="font-medium mb-2">Steps</h4>
